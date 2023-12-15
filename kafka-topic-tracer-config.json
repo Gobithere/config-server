@@ -1,4 +1,4 @@
-
+{
   "bootStrap_Server_Source_Hostname": "192.168.121.207",
   "bootStrap_Server_Target_Hostname": "192.168.121.92",
   "kafka_boostrapServers": ["192.168.121.207:9092"],
@@ -6,7 +6,7 @@
   "kafka_Connect_Host":"192.168.121.224",
   "kafka_Connect_Port":8083,
   "kafka_bootstrap_port": 9092,
-  app_listen_on_port= 5000
+  "app_listen_on_port": 5000,
   "kafka_filter_regex_pattern": "an",
   "topic_Tracer_Interval": 15000
-
+}
