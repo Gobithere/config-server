@@ -1,1 +1,13 @@
+mirrorCheckPointConnector:
+    name: "doob-kafka-ajoc-mirrorcheckpoint-connector"
+    config: 
+        connector_class: "org.apache.kafka.connect.mirror.MirrorCheckpointConnector"
+        key_converter: "org.apache.kafka.connect.converters.ByteArrayConverter"
+        value_converter: "org.apache.kafka.connect.converters.ByteArrayConverter"
+        source_cluster_alias: "joc-kafka-source"
+        source_cluster_bootstrap_server: "192.168.121.207:9092"
+        target_cluster_alias: "ajoc-kafka-target"
+        target_cluster_bootstrap_servers: "192.168.121.92:9092"
 
+
+mirrorHearthBeatConnector:
