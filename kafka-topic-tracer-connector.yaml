@@ -11,3 +11,29 @@ mirrorCheckPointConnector:
 
 
 mirrorHearthBeatConnector:
+    name: "doob-kafka-ajoc-mirrorhearthbeat-connector"
+    config: 
+        connector_class: "org.apache.kafka.connect.mirror.MirrorHeartbeatConnector"
+        key_converter: "org.apache.kafka.connect.converters.ByteArrayConverter"
+        value_converter: "org.apache.kafka.connect.converters.ByteArrayConverter"
+        source_cluster_alias: "joc-kafka-source"
+        source_cluster_bootstrap_server: "192.168.121.207:9092"
+        target_cluster_alias: "ajoc-kafka-target"
+        target_cluster_bootstrap_servers: "192.168.121.92:9092"
+
+mirrorSourceConnector:
+    name: "doob-kafka-ajoc-source-connector"
+    config: 
+        connector_class: "org.apache.kafka.connect.mirror.MirrorSourceConnector"
+        tasks.max: 2
+        topics: ""
+        sync.topic.acls.enabled: false
+        sync.topic.configs.enabled: false
+        key_converter: "org.apache.kafka.connect.converters.ByteArrayConverter"
+        value_converter: "org.apache.kafka.connect.converters.ByteArrayConverter"
+        source_cluster_alias: "joc-kafka-source"
+        source_cluster_bootstrap_server: "192.168.121.207:9092"
+        target_cluster_alias: "ajoc-kafka-target"
+        target_cluster_bootstrap_servers: "192.168.121.92:9092"
+        replication.factor: 1
+        replication.policy.class: "org.apache.kafka.connect.mirror.IdentityReplicationPolicy"
