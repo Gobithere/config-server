@@ -8,6 +8,7 @@ mirrorCheckPointConnector:
         source_cluster_bootstrap_server: "192.168.121.207:9092"
         target_cluster_alias: "ajoc-kafka-target"
         target_cluster_bootstrap_servers: "192.168.121.92:9092"
+        replication.policy.class: "org.apache.kafka.connect.mirror.IdentityReplicationPolicy"
 
 
 mirrorHearthBeatConnector:
